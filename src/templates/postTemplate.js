@@ -9,7 +9,14 @@ import {
   onSetAnchorHide,
   onSetSidebarHide,
 } from '../actions/layout'
+import { DocsFooter } from '../components/Footer/DocsFooter'
 import { getSidebarSelectedKey, getSidebarEntry } from "../store/selectors";
+import SEO from '../components/seo';
+
+function addIndex (url) {
+  const indexUrls = ['/docs', '/handbook']
+  return `${url}${indexUrls.includes(url) ? '/index' : ''}`
+}
 
 function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -21,7 +28,7 @@ function Template({
   onSetSidebarHide
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html, id } = markdownRemark
+  const { frontmatter, html, excerpt, id } = markdownRemark
 
   const hideAnchor = (frontmatter.hideAnchor === null) ? false : frontmatter.hideAnchor
   const hideSidebar = (frontmatter.sidebar === null) ? true : false
@@ -34,6 +41,12 @@ function Template({
 
   return (
     <Layout onPostPage={true}>
+    <SEO
+      title={frontmatter.title + ' - PostHog docs'}
+      description={frontmatter.description || excerpt}
+      pathname={markdownRemark.fields.slug}
+      article
+    />
     <div className="blog-post-container">
       <div className="blog-post">
         { frontmatter.showTitle && <h1 align="center">{frontmatter.title}</h1> }
@@ -42,6 +55,7 @@ function Template({
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
+      {(frontmatter.sidebar === 'Docs' || frontmatter.sidebar === 'Handbook') && <DocsFooter filename={`${addIndex(markdownRemark.fields.slug)}.md`} title={frontmatter.title} />}
     </div>
     </Layout>
   )
@@ -71,6 +85,7 @@ export const pageQuery = graphql`
       }
       id
       html
+      excerpt(pruneLength: 150)
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

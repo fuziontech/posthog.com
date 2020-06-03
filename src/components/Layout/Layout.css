@@ -259,7 +259,7 @@ h3 {
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
-  padding-top: 0;
+  padding-top: 1rem;
   margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -420,7 +420,7 @@ table {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  font-size: 1rem;
+  font-size: 14px;
   line-height: 1.45rem;
   border-collapse: collapse;
   width: 100%;
@@ -545,6 +545,7 @@ code {
   font-size: 0.85rem;
   line-height: 1.45rem;
 }
+code[class*="language-"] { margin:0; padding: 0}
 kbd {
   font-size: 0.85rem;
   line-height: 1.45rem;
@@ -592,13 +593,13 @@ td:last-child {
 }
 tt,
 code {
-  background-color: hsla(0, 0%, 0%, 0.04);
+  background-color: #f8f8f8;
   border-radius: 3px;
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  margin: 0 2px;
+  padding: 3px 5px;
+  white-space: pre-wrap;
 }
 pre code {
   background: none;
@@ -672,9 +673,9 @@ pre tt:after {
 }
 
 .footer-universal{
-  background: #000;
+  background: #29252C;
   color: #FFF;
-  position: 'relative';
+  position: relative;
   left: 0px;
   width: '100%';
   top: '100%';
@@ -684,6 +685,9 @@ pre tt:after {
   height: 100%;
 }
 
+.footer-universal a {
+  color: #fff;
+}
 .footer-links{
   list-style-type: none;
   margin-top:20px;
@@ -737,3 +741,34 @@ pre tt:after {
 .icon-100{
   font-size:85px;
 }
+
+.post-toc-anchor {
+  margin-left: -24px;
+  margin-right: 8px;
+  opacity: 0
+}
+.blog-post h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+.docs-footer {
+  margin-top: 2rem;
+  background: rgb(41, 37, 44, 0.1);
+  padding: 1rem 2rem;
+}
+.blog-post p > img {
+  margin: 0 auto;
+  width: 65%;
+  display: block;
+}
+h1:hover .post-toc-anchor,
+h2:hover .post-toc-anchor,
+h3:hover .post-toc-anchor,
+h4:hover .post-toc-anchor,
+h5:hover .post-toc-anchor,
+h6:hover .post-toc-anchor
+{
+  opacity: 1
+}
+
+a.middle { display: block; text-align: center }

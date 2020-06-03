@@ -18,7 +18,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer-universal">
-        <Row gutter={[24, 8]} justify="space-around">
+        <Row gutter={[24, 8]} justify="space-around" style={{margin: 0}}>
           <Col xs={0} sm={0} md={0} lg={6} xl={6} className="gutter-row">
           </Col>
           <Col xs={24} sm={24} md={24} lg={16} xl={16} className="gutter-row">
@@ -26,8 +26,8 @@ class Footer extends Component {
               <span className="footer-links-header" justify="space-around">Why PostHog</span>
               <FooterListItem to="/product-features">Features</FooterListItem>
               <FooterListItem to="/pricing">Pricing</FooterListItem>
-              <FooterListItem to="/services">Services</FooterListItem>
               <FooterListItem to="/faq">FAQ</FooterListItem>
+              <FooterListItem to="/startups">PostHog for Startups</FooterListItem>
             </Col>
             <Col xs={24} sm={24} md={4} lg={4} xl={4} className="gutter-row">
               <span className="footer-links-header">Resources</span>
@@ -61,7 +61,7 @@ class Footer extends Component {
             </Col>
             <Col xs={24} sm={24} md={4} lg={4} xl={4} className="gutter-row">
               <span className="footer-links-header">Support</span>
-              <FooterListItem to="/support">Contact support</FooterListItem>
+              <FooterListItem to="/support">Support</FooterListItem>
               <FooterListItem><a href="mailto:sales@posthog.com">Contact sales</a></FooterListItem>
               <FooterListItem to="/status">Status</FooterListItem>
             </Col>

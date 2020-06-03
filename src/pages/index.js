@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Button from 'antd/lib/button'
 import 'antd/lib/button/style/css'
+import './index.css'
 import { Link } from "gatsby"
 import trends from "../images/product-screenshots/product-trends.png";
 import dashboards from "../images/product-screenshots/dashboards.png";
@@ -24,10 +25,15 @@ import communityGithub from "../images/community-github.png";
 import communitySlack from "../images/community-slack.png";
 import communityRoadmap from "../images/community-roadmap.png";
 import { Row, Col, Icon } from 'antd';
+import SEO from '../components/seo';
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout className='index-page'>
+    <SEO
+      title='PostHog - open source product analytics'
+      description='Understand your users. Build a better product'
+    />
       <Row gutter={[24, 8]}>
         <Col span={24} className="gutter-row">
           <h2 className="large-header">Understand your users.<br />Build a better product.</h2>
@@ -45,7 +51,7 @@ const IndexPage = () => {
           </a>
         </Col>
         <Col xs={7} sm={6} md={5} lg={4} xl={4} className="gutter-row">
-          <a href="https://github.com/posthog/posthog">
+          <a href="/docs/deployment">
             <Button type="secondary" size="large">Self-Managed</Button>
           </a>
         </Col>
@@ -167,17 +173,17 @@ const IndexPage = () => {
           <Col span={24} className="header-row" align="middle">    
             <h2>Install now, free</h2>
           </Col>
-          <a href="https://heroku.com/deploy?template=https://github.com/posthog/posthog">
+          <Link to="/docs/deployment">
             <Col xs={12} sm={12} md={6} lg={6} xl={6} align="middle">
               <img alt="Deploy on Heroku" className="hover-shadow" src={installHeroku} />
             </Col>
-          </a>
+          </Link>
           <Link to="docs/deployment#docker">
             <Col xs={12} sm={12} md={6} lg={6} xl={6} align="middle">
               <img alt="Deploy on Docker" className="hover-shadow" src={installDocker} />
             </Col>
           </Link>
-          <Link to="docs/deployment">
+          <Link to="docs/deployment#aws-ecs-fargate">
             <Col xs={12} sm={12} md={6} lg={6} xl={6} align="middle">
               <img alt="Deploy on AWS" className="hover-shadow" src={installAws} />
             </Col>
@@ -218,8 +224,8 @@ const IndexPage = () => {
       <Row gutter={[24, 96]}>
         <Col span={24} className="gutter-row header-row" align="middle">
           <h2>What's new?</h2>
-          <p>Version 1.4.0</p>
-          <Link to="blog/the-posthog-array-1-4-0">
+          <p>Version 1.7.0</p>
+          <Link to="blog/the-posthog-array-1-7-0">
             <Button type="information" size="large">Release notes</Button>
           </Link>
         </Col>

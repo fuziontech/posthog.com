@@ -4,12 +4,8 @@
     "link":  "/docs"
   },
   { 
-    "name": "Product",
-    "link":  "/product-features"
-  },
-  {
-    "name": "Resources",
-    "link": "/blog"
+    "name": "Pricing",
+    "link":  "/pricing"
   },
   {
   	"name":"Install",
@@ -20,8 +16,8 @@
     "link":  "/trial"
   },
   { 
-    "name": "Support",
-    "link":  "/support"
+    "name": "GitHub",
+    "a":  "https://github.com/PostHog/posthog"
   },
   { 
     "name": "Login",

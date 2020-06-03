@@ -1,6 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'PostHog',
+    title: "PostHog",
+    titleTemplate: "%s",
+    description:
+      "Understand your users. Build a better product.",
+    url: "https://.posthog.com", // No trailing slash allowed!
+    image: "/cropped-Frame-1-192x192.png", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@posthoghq",
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -142,6 +148,17 @@ module.exports = {
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,
+    {
+      resolve: `gatsby-plugin-posthog-analytics`,
+      options: {
+        // Specify the API key for your Posthog Project (required)
+        apiKey: "sTMFPsFhdP1Ssg",
+        // Puts tracking script in the head instead of the body (optional, default: true)
+        head: true,
+	     // Enable posthog analytics tracking during development (optional, default: false)
+	      isEnabledDevMode: true
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

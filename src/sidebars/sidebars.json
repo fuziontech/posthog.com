@@ -6,6 +6,7 @@
       "Deployment",
       "Integrations",
       "Features",
+      "API",
       "Contributing",
       "Architecture"
     ]
@@ -24,12 +25,13 @@
     "name":"Deployment",
     "items": [
       "docs/deployment",
-      "docs/upgrading-posthog",
-      "docs/scaling-posthog",
-      "docs/snippet-installation",
+      "docs/deployment/scaling-posthog",
       "docs/deployment/securing-posthog",
+      "docs/deployment/running-behind-proxy",
+      "docs/deployment/upgrading-posthog",
       "docs/deployment/hosting-costs",
-      "docs/deployment/smtp-credentials"
+      "docs/deployment/smtp-credentials",
+      "docs/deployment/snippet-installation"
     ]
   },
   {
@@ -58,6 +60,17 @@
     ]
   },
   {
+    "entry":"API",
+    "name":"API",
+    "items":[
+      "docs/api/api",
+      "docs/api/events",
+      "docs/api/people",
+      "docs/api/trends",
+      "docs/api/user"
+    ]
+  },
+  {
     "entry":"Integrations",
     "name":"Integrations",
     "items": [
@@ -70,10 +83,12 @@
       "docs/integrations/node-integration",
       "docs/integrations/php-integration",
       "docs/integrations/python-integration",
+      "docs/integrations/react-native-integration",
       "docs/integrations/ruby-integration"
     ],
     "child_entries":[
-      "Community"
+      "Community",
+      "Sending Data Out"
     ]
   },
   {
@@ -82,6 +97,14 @@
     "items":[
       "docs/integrations/community",
       "docs/integrations/gatsby-integration"
+    ]
+  },
+  {
+    "entry":"Sending Data Out",
+    "name":"Sending Data Out",
+    "items":[
+      "docs/integrations/slack",
+      "docs/integrations/microsoft-teams"
     ]
   },
   {
@@ -105,7 +128,19 @@
   {
     "entry": "Blog",
     "name": "Blog",
-    "items": [
+    "child_entries":
+    [
+      "Releases",
+      "Blog Posts"
+    ]
+  },
+  {
+    "entry":"Releases",
+    "name":"Releases",
+    "items":[
+      "blog/the-posthog-array-1-7-0",
+      "blog/the-posthog-array-1-6-0",
+      "blog/the-posthog-array-1-5-0",
       "blog/the-posthog-array-1-4-0",
       "blog/the-posthog-array-1-3-0",
       "blog/the-posthog-array-1-2-0",
@@ -114,7 +149,13 @@
       "blog/the-posthog-array-1-0-10",
       "blog/the-posthog-array-1-0-9",
       "blog/the-posthog-array-1-0-8",
-      "blog/the-posthog-array-1",
+      "blog/the-posthog-array-1"
+    ]
+  },
+  {
+    "entry":"Blog",
+    "name":"Blog Posts",
+    "items": [
       "blog/after-the-hn-launch",
       "blog/pivot-to-posthog",
       "blog/moving-to-sf",
@@ -123,65 +164,70 @@
     ]
   },
   {
-    "entry":"Company",
-    "name":"Company",
-    "items":[
-      "careers",
-      "product-features",
-      "pricing",
-      "terms"
-    ],
-    "child_entries":[
-      "Handbook"
-    ]
-  },
-  {
     "entry":"Handbook",
     "name":"Handbook",
-    "items":[
-      "handbook/communication",
-      "handbook/contact",
-      "handbook/culture",
-      "handbook/posthog-array",
-      "handbook/security",
-      "handbook/side-gigs",
-      "handbook/spending-money",
-      "handbook/story",
-      "handbook/team",
-      "handbook/time-off",
-      "handbook/values"
-    ],
     "child_entries":[
+      "Company",
+      "People",
       "Engineering",
       "Growth",
       "Strategy"
     ]
   },
   {
+    "entry":"Company",
+    "name":"Company",
+    "items":
+    [
+      "handbook/company/communication",
+      "handbook/company/culture",
+      "handbook/company/security",
+      "handbook/company/story",
+      "handbook/company/team",
+      "handbook/company/values"
+    ]
+  },
+  {
+    "entry":"People",
+    "name":"People",
+    "items":
+    [
+      "handbook/people/onboarding",
+      "handbook/people/offboarding",
+      "handbook/people/side-gigs",
+      "handbook/people/spending-money",
+      "handbook/people/time-off",
+      "handbook/people/hiring-process"
+    ]
+  },
+  {
     "entry":"Growth",
     "name":"Growth",
     "items":[
-      "handbook/what-is-product-led-growth"
+      "handbook/growth/what-is-product-led-growth",
+      "handbook/growth/posthog-array"
     ]
   },
   {
     "entry":"Engineering",
     "name":"Engineering",
     "items":[
-      "handbook/development-process",
-      "handbook/how-to-qa",
-      "handbook/release-new-version"
+      "handbook/engineering/development-process",
+      "handbook/engineering/how-to-qa",
+      "handbook/engineering/release-new-version",
+      "handbook/engineering/onboarding-customer",
+      "handbook/engineering/setup-ssl-locally"
     ]
   },
   {
     "entry":"Strategy",
     "name":"Strategy",
     "items":[
-      "handbook/strategy",
-      "handbook/business-model",
-      "handbook/investors",
-      "handbook/investor-updates",
-      "handbook/roadmap"
+      "handbook/strategy/strategy",
+      "handbook/strategy/business-model",
+      "handbook/strategy/investors",
+      "handbook/strategy/investor-updates",
+      "handbook/strategy/roadmap"
     ]
   }
 ]
